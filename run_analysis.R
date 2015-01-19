@@ -133,5 +133,5 @@ melt_data = melt(data, id = id_labels, measure.vars = data_labels)
 
 
 #    5 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-tidy_dat = dcast(melt_data, subject + Activity_Label ~ variable, mean)
+tidy_dat = dcast(melt_data, subject Activity_Label ~ variable, mean)
 write.table(tidy_dat, file = "./tidy_data.txt",row.name=FALSE)
